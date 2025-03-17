@@ -13,7 +13,7 @@ public class CountVowels {
         int vowelSum = 0;
         
         // Prompt the user for the name of the file
-        System.out.print("Enter the file name, relitive to teh project directery (cap sensitve): ");
+        System.out.print("Enter the file name, relative to the project directery (cap sensitve): ");
         BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
         try {
             fileName = userInput.readLine();
