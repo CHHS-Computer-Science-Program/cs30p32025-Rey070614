@@ -1,3 +1,17 @@
+/*
+
+Program: WordGuessing.java          Last Date of this Revision: March,19,2025 
+
+Purpose: make the user guess the word one letter at a time
+
+Author: Reynaldo de Guzman 
+School: CHHS
+Course: CSE2130 - File Structures & Exception Handling
+ 
+
+*/
+
+
 package Mastery;
 import java.io.*;
 import java.util.*;

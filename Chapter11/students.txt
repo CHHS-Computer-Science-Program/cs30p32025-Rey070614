@@ -1,0 +1,4 @@
+Student Name: rey Grade Level:5 Semester:4  Grade 1: 89.0  Grade 2:  98.0  Grade 3: 78.0 Grade 4: 90.0 Average: 88.75Student Name: re Grade Level:23 Semester:2  Grade 1: 86.0  Grade 2:  87.0  Grade 3: 56.0 Grade 4: 90.0 Average: 79.75Student name: rey Grade: 23 Semester: 2 Grades: 86.0, 87.0, 86.0, 90.0 Average: 79.75
+Student Name: re Grade Level:23 Semester:2  Grade 1: 86.0  Grade 2:  87.0  Grade 3: 56.0 Grade 4: 90.0 Average: 79.75Student Name: rey Grade Level:12 Semester:4  Grade 1: 76.0  Grade 2:  65.0  Grade 3: 98.0 Grade 4: 67.0 Average: 76.5
+Student name: rey Grade: 12 Semester: 4 Grades: 76.0, 65.0, 98.0, 67.0 Average: 76.5
+Student Name: rey Grade Level:12 Semester:4  Grade 1: 76.0  Grade 2:  65.0  Grade 3: 98.0 Grade 4: 67.0 Average: 76.5

@@ -1,3 +1,16 @@
+/*
+
+Program: CountVowels.java          Last Date of this Revision: March,19,2025 
+
+Purpose: count the amount of vowels in a file
+
+Author: Reynaldo de Guzman 
+School: CHHS
+Course: CSE2130 - File Structures & Exception Handling
+ 
+
+*/
+
 package Mastery;
 
 

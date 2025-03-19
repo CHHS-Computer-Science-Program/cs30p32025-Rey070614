@@ -1,3 +1,17 @@
+/*
+
+Program: Semester average        Last Date of this Revision: March,19,2025 
+
+Purpose: calclate the average of a student, and save it to a file
+
+Author: Reynaldo de Guzman 
+School: CHHS
+Course: CSE2130 - File Structures & Exception Handling
+ 
+
+*/
+
+
 package Mastery;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
@@ -9,6 +23,11 @@ import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import javax.swing.UIManager;
@@ -155,6 +174,7 @@ public class SemesterAverage {
 		// Set the position and size of the label within the panel
 		lblNewLabel_1_1.setBounds(10, 51, 136, 14);
 		// Add the label to the panel
+		
 		panel.add(lblNewLabel_1_1);
 
 		// Create a label for the first grade field
@@ -236,7 +256,8 @@ public class SemesterAverage {
 		    public void actionPerformed(ActionEvent e) {
 		        // Print a message to the console when the button is clicked
 		        System.out.println("Save File!");
-
+		        
+		        
 		        // Parse the grades from the text fields and convert them to doubles
 		        double g1 = Double.parseDouble(grd1.getText());
 		        double g2 = Double.parseDouble(grd2.getText());
@@ -247,8 +268,29 @@ public class SemesterAverage {
 		        String stuAvg = stu.average((stuName.getText()).toString(), (stuGrade.getText()).toString(), (semester.getText()).toString(), g1, g2, g3, g4);
 		        System.out.println(stuAvg);
 		        studentAvg.setText(stuAvg);
-		    }
-		});
+		        
+		        try {
+		                FileWriter fw = new FileWriter("students.txt", true);  // 'true' to append data to the file
+		                BufferedWriter bw = new BufferedWriter(fw);
+		      
+		        	
+		        		String str = "Student Name: " + stuName.getText() + " Grade Level:" + stuGrade.getText() +  " Semester:" +  semester.getText() + "  Grade 1: " + g1  + "  Grade 2:  " 
+		        		+  g2 + "  Grade 3: " + g3 + " Grade 4: " + g4 + " Average: " + stuAvg + "%";
+		                // Write student data into the file
+		                stuList.setText(stuList.getText() + str);
+		                
+		               bw.write(stuList.getText());
+		              
+		                
+
+		                // The resources are automatically closed when the try block finishes
+		                System.out.println("Student information saved to file.");
+		            } catch (IOException ex) {
+		                // Handle any IO exceptions that occur while saving to the file
+		                ex.printStackTrace();
+		            }}}
+		);
+		
 		// Add the save button to the button panel
 		panel_1.add(saveFile);
 
@@ -263,12 +305,35 @@ public class SemesterAverage {
 		    public void actionPerformed(ActionEvent e) {
 		        // Print a message to the console when the button is clicked
 		        System.out.println("View File!");
-		        // Display the contents of the file in the text area
-		        stuList.setText(stu.viewFile());
+		        
+		        StringBuilder fileContents = new StringBuilder();
+
+		        // Use try-with-resources to automatically close the resources after reading
+		        try (
+		            BufferedReader br = new BufferedReader(new FileReader("../Chapter11/src/Mastery/students"))
+		        ) {
+		            String line;
+		            // Read each line from the file and append it to the StringBuilder
+		            while ((line = br.readLine()) != null) {
+		                fileContents.append(line).append("\n");
+		            }
+
+		            // Display the contents in the JTextArea
+		            stuList.setText(fileContents.toString());
+
+		        } catch (IOException ex) {
+		            // Handle any IO exceptions (e.g., file not found)
+		            ex.printStackTrace();
+		            stuList.setText("Error reading the file.");
+		        }
 		    }
-		});		
+		});
+		   
+		}
 	}
-}
+		   	
+	
+
 
 
 

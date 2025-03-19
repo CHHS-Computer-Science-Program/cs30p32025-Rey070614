@@ -25,7 +25,7 @@ public class Students {
 		
 		try
 		{
-			stuGrades = new File("C:\\Users\\27172002\\git\\cs30p32025-troyb19\\Chapter11\\src\\Mastery\\stuGrades");
+			stuGrades = new File("../Chapter11/src/Mastery/students");
 			out = new FileWriter(stuGrades, true);
 			writeFile = new BufferedWriter(out);
 			
@@ -51,7 +51,7 @@ public class Students {
 		
 		try
 		{
-			stuGrades = new File("C:\\Users\\27172002\\git\\cs30p32025-troyb19\\Chapter11\\src\\Mastery\\stuGrades");
+			stuGrades = new File("../Chapter11/src/Mastery/students");
 			in = new FileReader(stuGrades);
 			readFile = new BufferedReader(in);
 		
