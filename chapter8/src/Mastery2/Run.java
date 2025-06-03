@@ -36,7 +36,7 @@ public class Run {
      * - Balance display
      */
     private static void testPersonalAccount() {
-        // Create personal account with initial balance
+        // Create personal account with initial balance   
         Personal personalAccount = new Personal(150.0, "Justine", "Fung", 
                 "123 Center St", "Abbdayle", "CA", "07834");
         
